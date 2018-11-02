@@ -1,7 +1,7 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+let mongoose = require('mongoose');
+let Schema = mongoose.Schema;
 
-var todoSchema = new Schema({
+let todoSchema = new Schema({
   title: {type: String, required: true},
   content: {type: String, required: true},
   complete: {type: Boolean, default: false},

@@ -1,19 +1,19 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var mongoose = require('mongoose');
-var logger = require('morgan');
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let mongoose = require('mongoose');
+let logger = require('morgan');
+let indexRouter = require('./routes/index');
+let todoRouter = require('./routes/todo');
 
-var app = express();
+let app = express();
 
 // mongodb connection
-var mongoUrl = 'mongodb://localhost:27017/todoList';
+let mongoUrl = 'mongodb://localhost:27017/todoList';
 mongoose.Promise = global.Promise;
 mongoose.connect(mongoUrl);
-var db = mongoose.connection;
+let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function(){
   console.log('mongodb connection OK.');
@@ -30,7 +30,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api/todo', todoRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
