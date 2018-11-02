@@ -15,12 +15,6 @@ describe('todo', function () {
     res = httpMocks.createResponse()
   })
 
-  describe('list', function () {
-    it('정상적인 작동',async function () {
-
-    })
-  })
-
   describe('create', function () {
     it('정상적인 작동',async function () {
 
