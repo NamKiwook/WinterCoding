@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/NamKiwook/WinterCoding.svg?branch=master)](https://travis-ci.org/NamKiwook/WinterCoding)
 
 ## 접속 가능 URL
-[ToDo](http://localhost:3000/)
+[ToDo](http://13.209.76.85:3005/)
 
 ## 설치 전 주의 사항
 ```
