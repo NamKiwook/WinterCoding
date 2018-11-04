@@ -3,6 +3,7 @@ let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let mongoose = require('mongoose');
+let dbConfig = require('./db.config');
 let logger = require('morgan');
 let indexRouter = require('./routes/index');
 let todoRouter = require('./routes/todo');
@@ -10,7 +11,7 @@ let todoRouter = require('./routes/todo');
 let app = express();
 
 // mongodb connection
-let mongoUrl = 'mongodb://localhost:27017/todoList';
+let mongoUrl = dbConfig.url;
 mongoose.Promise = global.Promise;
 mongoose.connect(mongoUrl);
 let db = mongoose.connection;
