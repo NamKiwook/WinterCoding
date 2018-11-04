@@ -2,6 +2,9 @@
 
 [![Build Status](https://travis-ci.org/NamKiwook/WinterCoding.svg?branch=master)](https://travis-ci.org/NamKiwook/WinterCoding)
 
+## 접속 가능 URL
+[ToDo](http://localhost:3000/)
+
 ## 설치 전 주의 사항
 ```
 - node version 8.11.3 이상 [node](https://nodejs.org/ko/)
@@ -10,7 +13,7 @@
 ## 실행 방법
 ```
 - git clone https://github.com/NamKiwook/WinterCoding.git
-- cd server
+- cd WinterCoding/server
 - npm install
 - npm start
 - 웹 브라우저에서 http://localhost:3000/ 접속
