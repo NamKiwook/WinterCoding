@@ -18,4 +18,4 @@ router.put('/priority', todo.modifyPriority)
 
 router.delete('/', todo.remove)
 
-module.exports = router;
+module.exports = router

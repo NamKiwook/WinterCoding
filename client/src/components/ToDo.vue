@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <h2>Todo List</h2>
-        <div class="input-group" style="margin-bottom:10px;">
+        <div class="input-group" style="margin-bottom:10px">
             <input type="text" class="form-control" placeholder="할일을 입력하세요" v-model="addedToDo.title">
             <span class="input-group-btn">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">추가</button>
@@ -52,7 +52,7 @@
                     <div class="modal-header">
                         <h5 class="modal-title" id="addModalLabel">New ToDo</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+                            <span aria-hidden="true">&times</span>
                         </button>
                     </div>
                     <div class="modal-body">
@@ -86,7 +86,7 @@
                     <div class="modal-header">
                         <h5 class="modal-title" id="modifyModalLabel">Modify ToDo</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+                            <span aria-hidden="true">&times</span>
                         </button>
                     </div>
                     <div class="modal-body">
@@ -145,50 +145,50 @@
       },
       addToDo() {
         this.$axios.post('/api/todo',this.addedToDo).then(() => {
-          this.loadToDo();
-          this.addedToDo = {title: "", content: "", deadline: ""};
+          this.loadToDo()
+          this.addedToDo = {title: "", content: "", deadline: ""}
         }).catch((err) => {
           alert(err.response.data.errorMessage)
         })
       },
       completeToDo(todoId) {
         this.$axios.put('/api/todo/complete', {todoId: todoId}).then(() => {
-          this.loadToDo();
+          this.loadToDo()
         }).catch((err) => {
           alert(err.response.data.errorMessage)
         })
       },
       modifyTitle(todoId, title){
         this.$axios.put('/api/todo/title', {todoId: todoId, title: title}).then(() => {
-          this.loadToDo();
+          this.loadToDo()
         }).catch((err) => {
           alert(err.response.data.errorMessage)
         })
       },
       modifyContent(todoId, content){
         this.$axios.put('/api/todo/content', {todoId: todoId, content: content}).then(() => {
-          this.loadToDo();
+          this.loadToDo()
         }).catch((err) => {
           alert(err.response.data.errorMessage)
         })
       },
       modifyPriority(todoId, up){
         this.$axios.put('/api/todo/priority', {todoId: todoId, up: up}).then(() => {
-          this.loadToDo();
+          this.loadToDo()
         }).catch((err) => {
           alert(err.response.data.errorMessage)
         })
       },
       modifyDeadline(todoId, deadline) {
         this.$axios.put('/api/todo/deadline', {todoId: todoId, deadline: deadline}).then(() => {
-          this.loadToDo();
+          this.loadToDo()
         }).catch((err) => {
           alert(err.response.data.errorMessage)
         })
       },
       deleteToDo(todoId) {
         this.$axios.delete('/api/todo',{data : {todoId: todoId}}).then(() => {
-          this.loadToDo();
+          this.loadToDo()
         }).catch((err) => {
           alert(err.response.data.errorMessage)
         })
@@ -200,7 +200,7 @@
         else return true
       },
       parseDate(date) {
-        if(!date) return null;
+        if(!date) return null
         let dateObject = new Date(date)
         return dateObject.getFullYear() + '년 ' + (Number(dateObject.getMonth()) + 1) + '월 ' + dateObject.getDate() + '일 ' + dateObject.getHours() + ':' + dateObject.getMinutes()
       },

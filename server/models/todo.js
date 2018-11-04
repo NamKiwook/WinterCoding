@@ -1,5 +1,5 @@
-let mongoose = require('mongoose');
-let Schema = mongoose.Schema;
+let mongoose = require('mongoose')
+let Schema = mongoose.Schema
 
 let todoSchema = new Schema({
   title: {type: String, required: true},
@@ -8,6 +8,6 @@ let todoSchema = new Schema({
   delete: {type: Boolean, default: false},
   priority: Number,
   deadline: Date
-});
+})
 
-module.exports = mongoose.model('todo', todoSchema);
+module.exports = mongoose.model('todo', todoSchema)
