@@ -13,6 +13,7 @@
 - cd server
 - npm install
 - npm start
+- 웹 브라우저에서 http://localhost:3000/ 
 ```
 ## DB URL 변경
 ```
